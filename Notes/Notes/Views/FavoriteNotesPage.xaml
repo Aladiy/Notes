@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.FavoriteNotesPage"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}"
+             Title="Избранное">
+    <StackLayout>
+        <CollectionView x:Name="collectionView" Margin="20" SelectionMode="Single"
+                        SelectionChanged="OnNotesSelected" EmptyView="Нет избранных заметок" ItemsSource="{Binding Name}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                    <SwipeItem Text="" BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                                               x:Name="ReadSwipeItem" IconImageSource="icon_eye1.png"
+                                               CommandParameter="{Binding ID}"
+                                               Invoked="OnNoteClicked">
+                                    </SwipeItem>
+                                    <SwipeItem Text="" BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                                               x:Name="ShareSwipeItem" IconImageSource="icon_share.png"
+                                               CommandParameter="{Binding ID}"
+                                               Invoked="OnShareClicked">
+                                    </SwipeItem>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Grid Padding="1" HeightRequest="90" BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}">
+                                <Frame CornerRadius="16"
+                                       HasShadow="True" BackgroundColor="{AppThemeBinding Dark=#5F5F5F, Light=White}">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding ID}" x:Name="idlabel" IsVisible="False"></Label>
+                                            <Label Text="{Binding Name}" BackgroundColor="{AppThemeBinding Dark=#808080, Light=#FFF5EE}" 
+                                               TextColor="{AppThemeBinding Dark=White, Light=#505050}"
+                                               HorizontalOptions="Start" FontSize="Medium" Margin="1"></Label>
+                                            <Label Text="{Binding Date}" TextColor="Silver" 
+                                               FontSize="Small" Margin="0"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </SwipeView>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

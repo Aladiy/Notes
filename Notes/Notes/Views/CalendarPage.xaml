@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.CalendarPage"
+             Title="Календарь"
+             BackgroundColor="{AppThemeBinding Dark=#323232, Light=#FFF5EE}">
+ <StackLayout>
+        <DatePicker x:Name="reminderDatePicker" DateSelected="DatePicker_DateSelected"/>
+
+        <CollectionView x:Name="collectionView" Margin="20" SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged" EmptyView="Нет событий" ItemsSource="{Binding Name}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Grid Padding="1" HeightRequest="90" BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}" x:Name="noteGrid">
+                            <Frame CornerRadius="16"
+                                       HasShadow="True" BackgroundColor="{AppThemeBinding Dark=#5F5F5F, Light=White}">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout VerticalOptions="Center"> 
+                                        <Label Text="{Binding ReminderDate}" TextColor="Silver"  
+                                               FontSize="Small" Margin="0"></Label> 
+                                        <Label Text="{Binding ID}" x:Name="idlabel" IsVisible="False"></Label> 
+                                        <Label Text="{Binding Name}" BackgroundColor="{AppThemeBinding Dark=#808080, Light=#FFF5EE}"  
+                                               TextColor="{AppThemeBinding Dark=White, Light=#505050}" 
+                                               HorizontalOptions="Start" FontSize="Medium" Margin="1"></Label> 
+                                    </StackLayout> 
+                                </StackLayout> 
+                            </Frame> 
+                        </Grid> 
+                    </StackLayout> 
+                </DataTemplate> 
+            </CollectionView.ItemTemplate> 
+        </CollectionView> 
+    </StackLayout>
+</ContentPage> 

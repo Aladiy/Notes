@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.SettingsPage"
+             Title="Настройки"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}">
+    <ContentPage.Content>
+        <StackLayout Margin="30">
+            <Grid RowSpacing="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+ 
+
+                </Grid.RowDefinitions>
+                
+               <!-- Переключатель тёмной темы -->
+                <Label Grid.Row="0" Grid.Column="0" Text="Тёмная тема" FontSize="18" Margin="5" FontFamily="TrueSouth"
+                                VerticalOptions="Start" HorizontalOptions="Start" 
+                                TextColor="{AppThemeBinding Dark=White, Light=Black}"/>
+                <Switch Grid.Row="0" Grid.Column="1" IsToggled="{Binding DarkTheme}" HorizontalOptions="End" OnColor="#FF1493" ThumbColor="#FF1493"/>
+                <BoxView Color="Teal" Grid.Row="0" Opacity="0.4"
+                         WidthRequest="200"
+                         HeightRequest="15" CornerRadius="8" HorizontalOptions="StartAndExpand"/>
+
+
+                <!-- <Label Text="Ваше имя:" Grid.Row="1" Grid.Column="0" FontSize="18" FontFamily="TrueSouth" TextColor="{AppThemeBinding Dark=White, Light=Black}"/>
+
+                <Entry x:Name="nameEntry" Placeholder="" Grid.Row="1" Grid.Column="1" Text="{Binding Name}"/>
+
+                <Button Text="Сохранить" Clicked="SaveButton_Clicked" WidthRequest="30" HeightRequest="30" Grid.Row="2" Grid.Column="1"/>
+
+                <Label x:Name="resultLabel" Grid.Row="2" Grid.Column="0"/> -->
+               
+                <!--<Picker x:Name="FontPicker" Grid.Row="1" Grid.Column="1"
+            Title="Выберите шрифт"
+            SelectedIndexChanged="FontPicker_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Default Font</x:String>
+                            <x:String>Bold Font</x:String>
+                            <x:String>Bold Font2</x:String>
+                            <x:String>Bold Font3</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Пример текста" x:Name="label" Grid.Row="2" Grid.Column="1"
+           FontSize="18"
+           HorizontalOptions="Center"
+           VerticalOptions="Center">
+                </Label>-->
+            </Grid>
+         </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

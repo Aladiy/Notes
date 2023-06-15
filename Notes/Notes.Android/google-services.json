@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "473520805547",
+    "firebase_url": "https://dailynotes-736fe-default-rtdb.firebaseio.com",
+    "project_id": "dailynotes-736fe",
+    "storage_bucket": "dailynotes-736fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473520805547:android:ffc5bb69a15194dcf149ee",
+        "android_client_info": {
+          "package_name": "com.companyname.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473520805547-tf60h1l3sol2k9ejgol8gpq4pfl4pc6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0USBYS2Q3UQ782shw0ojw4VGxxPr7As8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473520805547-tf60h1l3sol2k9ejgol8gpq4pfl4pc6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

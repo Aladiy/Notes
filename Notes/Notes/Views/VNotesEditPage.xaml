@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:notes="clr-namespace:Notes" xmlns:notes1="clr-namespace:Notes.Views"
+             x:Class="Notes.Views.VNotesEditPage"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}">
+
+    <StackLayout>
+        <Label Text="Режим чтения"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="Title"
+               TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+        <Grid>
+            <Image x:Name="person_image" HeightRequest="512" WidthRequest="300" Aspect="AspectFit" />
+            <!--<ImageButton Source="icon_download.png" WidthRequest="30" 
+            HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="End" 
+            VerticalOptions="Start" Margin="0,5,5,0" Clicked="DownloadPhotoButton_Clicked"/>-->
+        </Grid>
+        <Frame Margin="0" BackgroundColor="{AppThemeBinding Dark=Gray, Light=White}" HasShadow="True">
+            <Label x:Name="LabelName" FontSize="Medium" Margin="0" TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                   />
+        </Frame>
+        <Frame Margin="0" BackgroundColor="{AppThemeBinding Dark=Gray, Light=White}" HasShadow="True">
+            <Label x:Name="LabelEmail" FontSize="Medium" Margin="0" TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                   />
+        </Frame>
+        <Frame Margin="0" BorderColor="{AppThemeBinding Dark=White, Light=#FFF5EE}" HasShadow="True">
+            <Grid RowSpacing="35" Padding="15" VerticalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" VerticalOptions="End" HorizontalOptions="StartAndExpand"
+                    Text="Озвучить текст"
+                    Clicked="BtnClicked"
+                    CornerRadius="110" TextColor="#FFF"
+                    BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"/>
+                <Slider Grid.Row="0"
+                    Grid.Column="1"
+                    MinimumTrackColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                    MaximumTrackColor="#FF1493"
+                    ThumbColor="#FF1493"
+                    Minimum="0" Maximum="1" Value="5" x:Name="slidervolume"
+                    VerticalOptions="EndAndExpand"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Написать: " FontSize="Medium" Margin="15" TextColor="{AppThemeBinding Dark=White, Light=#505050}"></Label>
+                <ImageButton Grid.Row="1" Grid.Column="1" VerticalOptions="End" HorizontalOptions="StartAndExpand"
+                    Source="icon_post.png" Clicked="OpenMailApp" WidthRequest="90" HeightRequest="70"
+                    CornerRadius="110"
+                    BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

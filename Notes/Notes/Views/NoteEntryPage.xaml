@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Notes.Views.NoteEntryPage" 
+             Title="Создание записи"
+             BackgroundColor="{AppThemeBinding Dark=#323232, Light=#FFF5EE}">
+    
+    <!-- Элементы Toolbar'а -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Дата" Clicked="OnSortClicked">
+            <ToolbarItem.Icon>
+                <FileImageSource File="icon_eye.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Удалить" Clicked="OnDeleteButtonClicked">
+            <ToolbarItem.Icon>
+                <FileImageSource File="icon_delete.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Сохранить" Clicked="OnSaveButtonClicked">
+            <ToolbarItem.Icon>
+                <FileImageSource File="icon_save.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <!-- Текстовые поля и слайдер-->
+
+    <StackLayout Margin="20">
+        <Grid RowSpacing="-45">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="315" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="btn_favorite" Grid.Row="0" Grid.Column="1"
+                Margin="2"
+                Clicked="OnNotFavoriteButtonClicked"
+                ImageSource="icon_notlove.png"
+                WidthRequest="51"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                IsVisible="false"/>
+            <Button x:Name="btn_notfavorite" Grid.Row="0" Grid.Column="1"
+                BackgroundColor="{AppThemeBinding Dark=#323232, Light=#FFF5EE}"
+                Margin="2"
+                ImageSource="icon_notlove.png"
+                Clicked="OnFavoriteButtonClicked"
+                WidthRequest="51"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                IsVisible="true"/>
+            <Entry Placeholder="Введите название..." Text="{Binding Name}" Grid.Row="0" Grid.Column="0"
+               BackgroundColor="{AppThemeBinding Dark=#434343, Light=White}"
+               MaxLength="20" 
+               ClearButtonVisibility="WhileEditing" TextColor="{AppThemeBinding Dark=White, Light=#434343}"
+               ReturnType="Next">
+        </Entry>
+        </Grid>
+        <Editor Placeholder="Введите текст..." x:Name="EntryText" Text="{Binding Text}"
+                BackgroundColor="{AppThemeBinding Dark=#434343, Light=White}" 
+                VerticalOptions="Fill" AutoSize="TextChanges" TextColor="{AppThemeBinding Dark=White, Light=#434343}"
+                HeightRequest="500">
+        </Editor>
+        <StackLayout>
+            <DatePicker x:Name="reminderDatePicker" Date="{Binding ReminderDate}" IsVisible="false"/>
+            <TimePicker x:Name="reminderTimePicker" Time="{Binding ReminderTime}" IsVisible="false"/>
+            <Button x:Name="btn_addoneweek" Clicked="AddOneWeek" Text="Продлить событие" TextColor="#FFF"
+                    BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                    HorizontalOptions="Center" IsVisible="false"/>
+        </StackLayout>
+        <!-- <StackLayout x:Name="sl_sound" Padding="10" IsVisible="false">
+            <Button x:Name="btn_sound" HorizontalOptions="Center" Text="Воспроизвести"
+                    Clicked="BtnClicked" CornerRadius="16" BackgroundColor="{AppThemeBinding Dark=#434343, Light=White}" 
+                    TextColor="{AppThemeBinding Dark=White, Light=#434343}"
+                    BorderColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"/>
+
+            <Slider MinimumTrackColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                    MaximumTrackColor="#FF1493"
+                    ThumbColor="#FF1493"
+                    HeightRequest="35"
+                    Minimum="0" Maximum="1" Value="5" x:Name="slidervolume" />
+        </StackLayout>-->
+
+    </StackLayout>
+</ContentPage>

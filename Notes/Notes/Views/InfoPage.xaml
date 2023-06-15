@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.InfoPage"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF68}">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Расширенная информация о приложении"
+                VerticalOptions="Start" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}"
+                HorizontalOptions="CenterAndExpand" 
+                StyleClass="Bold" 
+                FontSize="Title" 
+                Margin="5"
+            />
+
+             <!-- Первый блок -->
+            <Frame Margin="0" BackgroundColor="{AppThemeBinding Dark=Gray, Light=White}">
+                
+                <Label Text='"Текстовые заметки"'
+                    VerticalOptions="Start" 
+                    HorizontalTextAlignment="Center"
+                    StyleClass="Bold" 
+                    FontSize="Subtitle" 
+                    Margin="8" 
+                    TextColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                />
+            </Frame>
+
+            <Label Text="В этой категории отображаются созданные текстовые заметки. При нажатии на + открывается окно создания новой текстовой записи. При свайпе вправо появляется кнопка перехода в режим чтения." 
+                VerticalOptions="Start" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}"
+                HorizontalOptions="Center" 
+                FontSize="Small" 
+                Margin="5"
+            />
+
+            <Label Text='В окне создания текстовой записи в тулбаре отображаются кнопки "Удалить запись", "Сохранить запись/изменения". '
+                VerticalOptions="Start" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}"
+                HorizontalOptions="Center" 
+                FontSize="Small" 
+                Margin="5" 
+                Padding="5"
+            />
+            
+            <!-- Второй блок -->
+            <Frame Margin="0" BackgroundColor="{AppThemeBinding Dark=Gray, Light=White}">
+                
+                <Label Text='"Мои контакты"' 
+                    VerticalOptions="Start" 
+                    HorizontalTextAlignment="Center"
+                    StyleClass="Bold" 
+                    FontSize="Subtitle" 
+                    Margin="5"
+                    TextColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                />
+            </Frame>
+            
+            <Label Text="В этой категории отображаются созданные контакты.  При нажатии на поисковик открывается окно поиска нужного контакта."        
+                HorizontalOptions="Center" 
+                FontSize="Small" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}" 
+                Margin="8"
+            />
+            
+            <Label Text="При нажатии на + открывается окно создания нового контакта. При свайпе влево отображается кнопка перехода на окно редактирования контакта и кнока удаления контакта." 
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" 
+                FontSize="Small" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}" 
+                Margin="5" 
+                Padding="5"
+            />
+            
+            <!-- Третий блок -->
+            <Frame Margin="0" BackgroundColor="{AppThemeBinding Dark=Gray, Light=White}">
+                
+                <Label Text='"Настройки"' 
+                    VerticalOptions="Start" 
+                    HorizontalTextAlignment="Center"
+                    StyleClass="Bold" 
+                    FontSize="Subtitle" 
+                    Margin="0" 
+                    TextColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                />
+            </Frame>
+            
+            <Label Text="В этой категории можно изменить цвет темы приложения." 
+                HorizontalOptions="Center" 
+                FontSize="Small" 
+                TextColor="{AppThemeBinding Dark=White, Light=Gray}" 
+                Margin="5"
+            />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

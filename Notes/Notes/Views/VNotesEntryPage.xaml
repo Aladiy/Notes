@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.VNotesEntryPage"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            
+            <Label Text="Добавление нового контакта"
+                VerticalOptions="Start" TextColor="{AppThemeBinding Dark=White, Light=#505050}"
+                HorizontalOptions="Center" FontSize="Large" />
+            
+            <Entry x:Name="TxtName" Margin="25" WidthRequest="200" VerticalOptions="Center"
+                   Placeholder="Имя" PlaceholderColor="{AppThemeBinding Dark=White, Light=#505050}" HorizontalOptions="Center" TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+
+            <Entry x:Name="TxtEmail" Margin="25" WidthRequest="200" VerticalOptions="Center"
+                   Placeholder="Email" PlaceholderColor="{AppThemeBinding Dark=White, Light=#505050}"  HorizontalOptions="Center" TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+            
+            <Button Text="Сохранить" Margin="25"
+                   x:Name="ButtonSave" WidthRequest="200"
+                   CornerRadius="14" BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                   Clicked="ButtonSave_Clicked" TextColor="White" VerticalOptions="End"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

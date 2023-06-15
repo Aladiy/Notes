@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Notes.Views"
+       x:Class="Notes.AppShell"
+       BackgroundColor="{AppThemeBinding Dark={DynamicResource WindowBackgroundColor}, Light=#FFF5EE}">
+    <Shell.Resources>
+        <ResourceDictionary>
+            
+            <!-- Основные стили для элементов -->
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}" />
+                <Setter Property="Shell.ForegroundColor" Value="#FFF5EE" />
+                <Setter Property="Shell.TitleColor" Value="#FFF5EE" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#FF1493" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark=#434343, Light=White}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#FFF5EE"/>
+            </Style>
+            
+        <!-- Стили для Label -->
+            <Style x:Key="Label" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=White}"/>
+            </Style>
+
+            <!-- Стили для TabBar-->
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+
+            <!-- Стили для FlyoutItem-->
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+
+            <!-- Стили по умолчанию для всех Flyout Items
+            https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes 
+            -->
+            
+           <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#FFF5EE"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#505050" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- Стили для Flyout Item-->
+           
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+       <!-- Содержимое всплывающего окна
+        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
+       -->
+
+    <FlyoutItem Title="Текстовые заметки" Icon="icon_notes.png">
+        <ShellContent Route="NotesPage" ContentTemplate="{DataTemplate views:NotesPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Новая запись" Icon="icon_feed.png">
+            <ShellContent Route="NoteEntryPage" ContentTemplate="{DataTemplate views:NoteEntryPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Избранное" Icon="icon_heart.png">
+        <ShellContent Route="FavoriteNotesPage" ContentTemplate="{DataTemplate views:FavoriteNotesPage}" />
+    </FlyoutItem>
+    <!--<FlyoutItem Title="Календарь" Icon="icon_heart.png">
+        <ShellContent Route="CalendarPage" ContentTemplate="{DataTemplate views:CalendarPage}" />
+    </FlyoutItem>-->
+    <!-- <FlyoutItem Title="Контакты" Icon="icon_heart.png">
+        <ShellContent Route="ContactPage" ContentTemplate="{DataTemplate views:ContactPage}" />
+    </FlyoutItem> -->
+    <!--<FlyoutItem Title="Голосовые заметки" Icon="icon_heart.png">
+        <ShellContent Route="VoiceNotesPage" ContentTemplate="{DataTemplate views:VoiceNotesPage}" />
+    </FlyoutItem>-->
+    <FlyoutItem Title="События" Icon="icon_event.png">
+        <ShellContent Route="ReminderDatePage" ContentTemplate="{DataTemplate views:ReminderDatePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Мои контакты" Icon="icon_person.png">
+            <ShellContent Route="VNotesPage" ContentTemplate="{DataTemplate views:VNotesPage}" />
+     </FlyoutItem>
+    <!--<FlyoutItem Title="Документы" Icon="icon_person.png">
+        <ShellContent Route="DocsNotesPage" ContentTemplate="{DataTemplate views:DocsNotesPage}" />
+    </FlyoutItem>-->
+    <FlyoutItem Title="Настройки" Icon="icon_settings.png">
+            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate views:SettingsPage}" />
+     </FlyoutItem>
+     <FlyoutItem Title="О приложении" Icon="icon_about.png">
+            <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate views:AboutPage}" />
+     </FlyoutItem>
+    
+</Shell>

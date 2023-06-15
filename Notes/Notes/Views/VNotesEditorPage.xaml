@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.VNotesEditorPage"
+             BackgroundColor="{AppThemeBinding Dark=#434343, Light=#FFF5EE}">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="Обновление информации о контакте" VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Title" TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+            <Label Text="Нажмите дважды, чтобы добавить фото"
+               VerticalOptions="Center" Margin="15"
+                HorizontalOptions="Center" FontSize="Subtitle"  TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+
+            <Image x:Name="DataImage" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" WidthRequest="200">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="ImageTap" Tapped="Image_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Entry x:Name="TxtId" Margin="15" VerticalOptions="End" IsVisible="False"/>
+
+            <Entry x:Name="TxtName" Margin="15" VerticalOptions="End" PlaceholderColor="{AppThemeBinding Dark=White, Light=#505050}" 
+                   Placeholder="Имя" WidthRequest="200" TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+
+            <Entry x:Name="TxtEmail" Margin="15" VerticalOptions="End" PlaceholderColor="{AppThemeBinding Dark=White, Light=#505050}" 
+                   Placeholder="Email" WidthRequest="200" TextColor="{AppThemeBinding Dark=White, Light=#505050}"/>
+
+            <Button Text="Сохранить" x:Name="ButtonUpdate" Margin="15" 
+                    VerticalOptions="End" WidthRequest="200"
+                    BackgroundColor="{AppThemeBinding Dark=#6C0AAB, Light=#D177F3}"
+                    CornerRadius="14"
+                    Clicked="ButtonUpdate_Clicked" TextColor="White"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
